@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="description" content="Catálogo de instrumentos de medición electrónica disponibles en México. Compara modelos, características y precios referenciales.">
+  
+  <title>Voltia — Instrumentos de medición</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <script src="script.js" defer></script>
+</head>
+<body>
+  
+  <div class="announcement">Catálogo informativo para México <span>·</span> Precios de referencia en pesos mexicanos (MXN)</div>
+  
+  <header class="site-header">
+    
+    <a class="brand" href="#" aria-label="Voltia, inicio">
+      <span class="brand-mark" aria-hidden="true">V</span>
+      <span>voltia<span class="brand-period">.</span></span>
+    </a>
+    
+    <form class="search" id="search-form" role="search">
+      <label class="sr-only" for="search-input">Buscar instrumentos</label>
+      <span aria-hidden="true" class="search-icon">⌕</span>
+      
+      <input id="search-input" type="search" placeholder="Busca un instrumento, marca o modelo..." autocomplete="off">
+      <button type="submit">Buscar</button>
+    </form>
+    
+    <div class="header-actions">
+      <button class="header-action" id="favorites-toggle" type="button" aria-pressed="false">
+        <span aria-hidden="true">♡</span><span class="action-label">Favoritos</span><span class="count-badge" id="favorite-count">0</span>
+      </button>
+      <button class="header-action cart-button" id="cart-toggle" type="button" aria-label="Ver carrito">
+        <span aria-hidden="true">▱</span><span class="action-label">Carrito</span><span class="count-badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  
+  <main>
+    
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="live-dot"></span> EQUIPO PARA MEDIR MEJOR</span>
+        <h1>La precisión que<br>tu trabajo <span>necesita.</span></h1>
+        <p>Encuentra instrumentos confiables para tu taller, laboratorio o próximo proyecto.</p>
+        <a class="hero-cta" href="#catalogo">Explorar catálogo <span aria-hidden="true">↓</span></a>
+        <div class="hero-proof">Instrumentos de marcas conocidas en el sector</div>
+      </div>
+      <div class="hero-visual" aria-label="Instrumentos de medición electrónica en un laboratorio">
+        <div class="hero-note"><span class="note-icon">↗</span><span><strong>El instrumento correcto</strong><small>para cada medición</small></span></div>
+        <div class="hero-sticker">PRECISIÓN<br><strong>EN CADA<br>LECTURA</strong></div>
+      </div>
+      <div class="hero-bottom">
+        <span><b>06</b> categorías</span><span class="hero-divider"></span>
+        <span><b>12</b> modelos destacados</span><span class="hero-divider"></span>
+        <span><b>100%</b> para comparar</span>
+      </div>
+    </section>
+
+    
+    <section class="benefit-strip" aria-label="Beneficios">
+      <div><span class="benefit-icon">⌖</span><span><strong>Marcas confiables</strong><small>Modelos reconocidos en el sector</small></span></div>
+      <div><span class="benefit-icon">▤</span><span><strong>Compara fácilmente</strong><small>Características claras y útiles</small></span></div>
+      <div><span class="benefit-icon">MX</span><span><strong>Precios en México</strong><small>En pesos mexicanos, referenciales</small></span></div>
+    </section>
+
+    
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">NUESTRO CATÁLOGO</span>
+          <h2>Instrumentos destacados</h2>
+          <p>Una selección para medir con confianza.</p>
+        </div>
+        
+        <label class="sort-control" for="sort-select">Ordenar por
+          <select id="sort-select">
+            <option value="featured">Recomendados</option>
+            <option value="price-low">Precio: menor a mayor</option>
+            <option value="price-high">Precio: mayor a menor</option>
+          </select>
+        </label>
+      </div>
+
+      
+      <div class="catalog-layout">
+        
+        <aside class="filters">
+          <div class="filter-title"><h3>Categorías</h3><button id="clear-filters" type="button">Limpiar</button></div>
+          <div id="category-list" class="category-list"></div>
+          <div class="filter-note"><span>ⓘ</span> Los precios y la disponibilidad pueden cambiar según el distribuidor.</div>
+        </aside>
+        <div class="products-area">
+          <div class="results-bar">
+            <p id="results-count" aria-live="polite"></p>
+            <button class="mobile-filter" id="mobile-filter" type="button">☷ Categorías</button>
+          </div>
+          
+          <div class="product-grid" id="product-grid"></div>
+          
+          <div class="empty-state" id="empty-state" hidden>
+            <span>⌕</span><h3>No encontramos resultados</h3><p>Prueba otra búsqueda o cambia los filtros.</p>
+            <button class="outline-button" id="reset-search" type="button">Ver todo el catálogo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="disclaimer">
+      <strong>Información importante</strong>
+      <p>Los precios son estimaciones informativas en MXN, no cotizaciones ni ofertas vigentes. Las fotos enlazan a páginas oficiales del fabricante; antes de comprar, confirma que correspondan a la variante exacta, además de precio, existencia, garantía, accesorios y especificaciones.</p>
+    </section>
+  </main>
+
+  
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">V</span><span>voltia<span class="brand-period">.</span></span></a>
+    <p>Una guía sencilla para elegir tu próximo instrumento.</p>
+    <span>Catálogo demostrativo · México</span>
+  </footer>
+
+  
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  
+  <dialog class="product-dialog" id="product-dialog">
+    <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  
+  <dialog class="cart-dialog" id="cart-dialog">
+    <div class="cart-heading"><div><span class="eyebrow">TU SELECCIÓN</span><h2>Carrito de comparación</h2></div><button class="dialog-close" id="cart-close" type="button" aria-label="Cerrar">×</button></div>
+    <div id="cart-items"></div>
+    <div class="cart-total" id="cart-total"></div>
+    <p class="cart-disclaimer">Este catálogo es demostrativo: el carrito sirve para organizar modelos y no procesa pagos ni pedidos.</p>
+  </dialog>
+</body>
+</html>
